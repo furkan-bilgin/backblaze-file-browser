@@ -1,0 +1,15 @@
+{% macro render_file(file) -%}
+
+<div class="card">
+    <div class="card-body">
+        <a href="/delete/{{ file.id }}" onclick="return window.confirm('Are you sure?')">
+            <i class="las la-trash"></i>
+        </a> 
+
+        <a href="{{ file.get_full_url() }}" target="_blank">
+            {{ file.filename }}
+        </a>
+    </div>
+</div>
+
+{%- endmacro %}

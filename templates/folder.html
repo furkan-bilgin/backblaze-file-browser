@@ -1,0 +1,13 @@
+{% from "content/file.html" import render_file %}
+
+{% extends "default.html" %}
+
+{% block body %}
+
+{% include "content/upload_button.html" %}
+
+{% for file in files %}
+    {{ render_file(file) }}
+{% endfor %}
+
+{% endblock %}

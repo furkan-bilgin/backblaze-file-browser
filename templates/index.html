@@ -1,0 +1,18 @@
+{% from "content/file.html" import render_file %}
+{% from "content/folder.html" import render_folder %}
+
+{% extends "default.html" %}
+
+{% block body %}
+
+{% include "content/upload_button.html" %}
+
+{% for folder in folders %}
+    {{ render_folder(folder)}}
+{% endfor %}
+
+{% for file in files %}
+    {{ render_file(file) }}
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,31 @@
+<form>
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <button class="fileUpload btn btn-default">
+                <span class="glyphicon glyphicon-upload"></span> Upload file
+                <input type="file" id="uploadFile" required="required">
+            </button>
+        </div>
+
+        <div class="input-group-prepend">
+            <input type="text" placeholder="Directory name" name="directoryName" id="directoryName" 
+                {% if folder_name %}
+                    value="{{ folder_name }}"
+                {% endif %}
+            >
+        </div>
+    </div>
+    
+</form>
+    
+<p id="fileUploadError" class="text-danger hide"></p>
+
+<div class="list-group" id="files"></div>
+
+<script id="fileUploadProgressTemplate" type="text/x-jquery-tmpl">
+    <div class="list-group-item">
+        <div class="progress progress-striped active">
+            <div class="progress-bar progress-bar-info" style="width: 0%;"></div>
+        </div>
+    </div>
+</script>
